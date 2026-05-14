@@ -6,16 +6,22 @@ import { ProjectCard } from "../components/ProjectCard";
 export const Home = () => {
   const featuredProjects = [
     {
+      title: "UCMAS Management System",
+      description: "A robust administrative portal for managing student records, grading, and operational workflows with precision.",
+      link: "ucmas-cape-coast-management-system.vercel.app",
+      tags: ["React", "Admin Portal", "Workflow"],
+    },
+    {
+      title: "Dev with Mercedes Portfolio",
+      description: "A premium digital archive showcasing the fusion of high-performance engineering and architectural design.",
+      link: "chelles-portfolio.vercel.app",
+      tags: ["React", "Motion", "Premium UI"],
+    },
+    {
       title: "Guan Web",
       description: "A cultural heritage portal designed to preserve and showcase the linguistic and historical legacy of the Guan people.",
       link: "guan-web.vercel.app",
       tags: ["React", "Motion", "Architecture"],
-    },
-    {
-      title: "Sip Bite App",
-      description: "A comprehensive food and beverage discovery platform with seamless ordering and discovery features.",
-      link: "sip-bite-app.vercel.app",
-      tags: ["React", "Vite", "Tailwind"],
     }
   ];
 
@@ -177,7 +183,7 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] text-white/30 tracking-widest uppercase">
           <div className="flex items-center gap-2">
             <Terminal className="w-4 h-4 text-accent" />
-            <p>© 2026 CHELLE — ENGINEERED WITH PRECISION</p>
+            <p>© 2026 DEV WITH MERCEDES — ENGINEERED WITH PRECISION</p>
           </div>
           <div className="flex gap-12">
             <a href="https://www.linkedin.com/in/michelle-amfo-906243409" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>

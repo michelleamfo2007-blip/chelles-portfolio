@@ -6,6 +6,18 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 export const Work = () => {
   const projects = [
     {
+      title: "UCMAS Management System",
+      description: "A robust administrative portal for managing student records, grading, and operational workflows with precision.",
+      link: "ucmas-cape-coast-management-system.vercel.app",
+      tags: ["React", "Admin Portal", "Workflow"],
+    },
+    {
+      title: "Dev with Mercedes Portfolio",
+      description: "A premium digital archive showcasing the fusion of high-performance engineering and architectural design.",
+      link: "chelles-portfolio.vercel.app",
+      tags: ["React", "Motion", "Premium UI"],
+    },
+    {
       title: "Guan Web",
       description: "A cultural heritage portal designed to preserve and showcase the linguistic and historical legacy of the Guan people.",
       link: "guan-web.vercel.app",
