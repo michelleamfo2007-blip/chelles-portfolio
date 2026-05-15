@@ -2,7 +2,7 @@
 
 Welcome to the official repository of **Dev with Mercedes** (Michelle Nhyira Amfo). This is a high-performance, premium digital portfolio designed to showcase a curated collection of full-stack engineering projects and technical expertise.
 
-![Dev with Mercedes Portfolio](https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6)
+ 
 
 ## 🚀 Overview
 
