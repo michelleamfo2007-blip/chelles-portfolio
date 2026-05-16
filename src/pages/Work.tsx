@@ -6,6 +6,12 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 export const Work = () => {
   const projects = [
     {
+      title: "Journee Suites",
+      description: "A luxury boutique stay showcase featuring an immersive 360° virtual tour and premium architectural storytelling.",
+      link: "journee-suites.vercel.app",
+      tags: ["Next.js", "Tailwind CSS", "360° Tour"],
+    },
+    {
       title: "Okissibiri Technology",
       description: "A modern technology solutions website delivering innovation and digital services.",
       link: "okissibiri-technology.vercel.app",

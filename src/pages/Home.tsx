@@ -6,6 +6,12 @@ import { ProjectCard } from "../components/ProjectCard";
 export const Home = () => {
   const featuredProjects = [
     {
+      title: "Journee Suites",
+      description: "A luxury boutique stay showcase featuring an immersive 360° virtual tour and premium architectural storytelling.",
+      link: "journee-suites.vercel.app",
+      tags: ["Next.js", "Tailwind CSS", "360° Tour"],
+    },
+    {
       title: "UCMAS Management System",
       description: "A robust administrative portal for managing student records, grading, and operational workflows with precision.",
       link: "ucmas-cape-coast-management-system.vercel.app",
