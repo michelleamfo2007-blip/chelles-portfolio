@@ -35,169 +35,180 @@ export const Home = () => {
     {
       title: "Architecture",
       description: "Designing scalable, maintainable cloud-native systems using modern microservices and serverless patterns.",
-      icon: <Database className="w-6 h-6" />
+      icon: <Database className="w-8 h-8" />
     },
     {
       title: "Frontend Engineering",
       description: "Building immersive, high-performance user interfaces with React, Next.js, and advanced motion libraries.",
-      icon: <Layout className="w-6 h-6" />
+      icon: <Layout className="w-8 h-8" />
     },
     {
       title: "Creative Solutions",
       description: "Merging aesthetic elegance with robust engineering to solve complex business problems visually.",
-      icon: <Sparkles className="w-6 h-6" />
+      icon: <Sparkles className="w-8 h-8" />
     }
   ];
 
   return (
-    <div className="bg-[#050505]">
+    <div className="bg-off-white text-pink-950">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-        <div className="absolute top-1/4 -right-1/4 w-[500px] h-[500px] bg-accent/5 blur-[120px] rounded-full" />
-        <div className="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full" />
+      <section className="hero-container relative min-h-[80vh] flex items-center overflow-hidden">
+        <div className="absolute top-1/4 -right-1/4 w-[500px] h-[500px] bg-pink-light/20 blur-[120px] rounded-full" />
+        <div className="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-pink-400/20 blur-[120px] rounded-full" />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto w-full relative z-10 px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-accent font-mono text-[10px] tracking-[0.3em] uppercase block mb-6 px-1 border-l border-accent/30">
+            <span className="text-pink-light font-mono text-xs tracking-[0.2em] uppercase block mb-6 px-2 border-l-2 border-pink-light/50">
               Available for Freelance
             </span>
-            <h1 className="text-[80px] md:text-[110px] lg:text-[140px] font-serif italic font-light tracking-tighter leading-[0.85] mb-10 text-white">
+            <h1 className="text-5xl sm:text-[60px] md:text-[90px] lg:text-[120px] font-serif italic font-light tracking-tighter leading-[0.9] mb-8 text-white">
               Full Stack <br />
-              <span className="not-italic text-accent">Developer.</span>
+              <span className="not-italic text-pink-light">Developer.</span>
             </h1>
-            <p className="max-w-2xl text-lg md:text-xl text-white/50 leading-relaxed mb-12 font-light">
+            <p className="max-w-2xl text-lg md:text-xl text-pink-100/80 leading-relaxed mb-10 font-light">
               Architecting seamless digital ecosystems from concept to cloud deployment. 
               Focused on performance, elegance, and user-centric architecture.
             </p>
             
             <div className="flex flex-wrap gap-8 items-center">
-              <Link to="/work" className="group relative text-white text-[11px] font-bold uppercase tracking-widest flex items-center gap-4">
-                <span className="pb-1 border-b border-accent/50 group-hover:border-accent transition-colors">View Projects</span>
-                <div className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center group-hover:bg-accent group-hover:text-black transition-all">
-                  <ChevronRight className="w-4 h-4" />
-                </div>
+              <Link to="/work" className="group relative bg-white text-pink-950 px-6 py-3 rounded-md font-bold uppercase tracking-widest flex items-center gap-3 transition-transform hover:scale-105 shadow-lg shadow-pink-950/20">
+                <span>View Projects</span>
+                <ChevronRight className="w-4 h-4" />
               </Link>
               <div className="flex items-center gap-6">
-                <a href="https://github.com/michelleamfo2007-blip" target="_blank" rel="noopener noreferrer" className="opacity-40 hover:opacity-100 transition-opacity text-white">
-                  <Github className="w-5 h-5" />
+                <a href="https://github.com/michelleamfo2007-blip" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 hover:text-pink-light transition-colors text-white">
+                  <Github className="w-6 h-6" />
                 </a>
-                <a href="https://www.linkedin.com/in/michelle-amfo-906243409" target="_blank" rel="noopener noreferrer" className="opacity-40 hover:opacity-100 transition-opacity text-white">
-                  <Linkedin className="w-5 h-5" />
+                <a href="https://www.linkedin.com/in/michelle-amfo-906243409" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 hover:text-pink-light transition-colors text-white">
+                  <Linkedin className="w-6 h-6" />
                 </a>
-                <a href="https://www.tiktok.com/@devwithmercedes" target="_blank" rel="noopener noreferrer" className="opacity-40 hover:opacity-100 transition-opacity text-white">
-                  <MessageCircle className="w-5 h-5" />
+                <a href="https://www.tiktok.com/@devwithmercedes" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 hover:text-pink-light transition-colors text-white">
+                  <MessageCircle className="w-6 h-6" />
                 </a>
               </div>
             </div>
           </motion.div>
         </div>
-
-        <div className="absolute right-12 bottom-12 hidden lg:block opacity-20">
-          <div className="writing-mode-vertical rotate-180 text-[10px] tracking-[0.5em] font-bold uppercase text-white">
-            SCROLL TO EXPLORE — SCROLL TO EXPLORE
-          </div>
-        </div>
       </section>
 
       {/* Philosophy / Brief About */}
-      <section className="py-32 border-t border-white/5 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-20 items-center">
+      <section className="section py-20 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="grid md:grid-cols-2 gap-16 items-center card-elevated"
+          >
             <div>
-              <span className="text-accent font-mono text-[10px] tracking-widest uppercase mb-6 block">Philosophy</span>
-              <h2 className="text-4xl md:text-6xl font-serif italic text-white tracking-tighter leading-tight mb-8">
+              <span className="text-pink-700 font-mono text-[12px] tracking-widest uppercase mb-4 block">Philosophy</span>
+              <h2 className="text-4xl md:text-5xl font-serif italic text-pink-950 tracking-tighter leading-tight mb-6">
                 Turning complexity into <br /> 
-                <span className="not-italic text-accent">effortless elegance.</span>
+                <span className="not-italic text-pink-600">effortless elegance.</span>
               </h2>
             </div>
-            <div className="text-white/50 text-lg font-light leading-relaxed space-y-6">
+            <div className="text-pink-900/80 text-lg leading-relaxed space-y-6">
               <p>
                 I specialize in bridging the gap between sophisticated backend engineering and 
                 premium frontend experiences. My approach is rooted in the belief that great 
                 software should be as beautiful as it is functional.
               </p>
-              <Link to="/about" className="inline-flex items-center gap-2 text-white text-xs uppercase tracking-widest font-bold group">
+              <Link to="/about" className="inline-flex items-center gap-2 text-pink-700 text-sm uppercase tracking-widest font-bold group">
                 Learn More 
-                <div className="w-0 h-px bg-white group-hover:w-8 transition-all" />
+                <div className="w-6 h-px bg-pink-700 group-hover:w-12 transition-all" />
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-32 bg-black relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-px bg-white/5 border border-white/5 overflow-hidden">
+      <section className="section py-20 bg-pink-50 relative">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="mb-12">
+            <h2 className="section-title">My Capabilities</h2>
+          </div>
+          <div className="grid-container">
             {services.map((service, idx) => (
-              <div key={idx} className="p-12 bg-[#050505] hover:bg-[#0a0a0a] transition-colors group">
-                <div className="text-accent mb-8 group-hover:scale-110 transition-transform origin-left">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                key={idx} 
+                className="vendor-card group"
+              >
+                <div className="text-pink-600 mb-6 group-hover:scale-110 group-hover:text-pink-500 transition-all origin-left bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center">
                   {service.icon}
                 </div>
-                <h3 className="text-lg font-bold uppercase tracking-widest mb-4 text-white">{service.title}</h3>
-                <p className="text-white/40 text-sm leading-relaxed">{service.description}</p>
-              </div>
+                <h3 className="text-xl font-bold mb-3 text-pink-950">{service.title}</h3>
+                <p className="text-pink-800/70 text-sm leading-relaxed">{service.description}</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Featured Projects Preview */}
-      <section className="py-32 border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex justify-between items-end mb-20">
+      <section className="section py-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="flex justify-between items-end mb-12">
             <div>
-              <span className="text-accent font-mono text-[10px] tracking-widest uppercase mb-4 block">Selected Archive</span>
-              <h2 className="text-5xl md:text-7xl font-serif italic text-white tracking-tighter">Featured Works</h2>
+              <span className="text-pink-700 font-mono text-[12px] tracking-widest uppercase mb-2 block">Selected Archive</span>
+              <h2 className="section-title text-3xl md:text-4xl">Featured Works</h2>
             </div>
-            <Link to="/work" className="hidden md:block text-white/40 text-[10px] uppercase tracking-widest hover:text-white transition-colors">
-              View All Projects →
+            <Link to="/work" className="hidden md:flex text-pink-700 text-sm font-bold uppercase tracking-widest hover:text-pink-500 transition-colors items-center gap-2">
+              View All Projects <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-px bg-white/5 border border-white/5 overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-8">
             {featuredProjects.map((project, idx) => (
-              <ProjectCard key={idx} {...project} />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                key={idx}
+              >
+                {/* Note: In the next step, we'll update ProjectCard.tsx as well. For now it uses its internal styling */}
+                <ProjectCard {...project} />
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-40 relative overflow-hidden bg-black border-t border-white/5">
-        <div className="absolute inset-0 bg-accent/5 blur-[120px] rounded-full translate-y-1/2" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-6xl md:text-9xl font-serif italic text-white tracking-tighter mb-12 leading-[0.8]">
-            Ready to <br /> 
-            <span className="not-italic text-accent">innovate?</span>
-          </h2>
-          <p className="max-w-xl mx-auto text-white/40 text-lg mb-16 font-light">
-            I'm currently available for full-time roles and high-impact freelance collaborations.
-          </p>
-          <Link to="/contact" className="inline-block bg-white text-black px-12 py-5 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-accent hover:text-white transition-all transform hover:scale-105">
-            Start a Conversation
-          </Link>
-        </div>
+      <section className="section pb-32">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-5xl mx-auto px-6 py-24 bg-pink-950 rounded-[32px] text-center relative overflow-hidden shadow-2xl shadow-pink-950/20"
+        >
+          <div className="absolute inset-0 bg-gradient-to-tr from-pink-900 to-pink-800 opacity-50" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8Y2lyY2xlIGN4PSIyIiBjeT0iMiIgcj0iMSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjEpIj48L2NpcmNsZT4KPC9zdmc+')] opacity-30" />
+          
+          <div className="relative z-10">
+            <h2 className="text-5xl md:text-7xl font-serif italic text-white tracking-tighter mb-8">
+              Ready to innovate?
+            </h2>
+            <p className="max-w-xl mx-auto text-pink-100/70 text-lg mb-12 font-light">
+              I'm currently available for full-time roles and high-impact freelance collaborations.
+            </p>
+            <Link to="/contact" className="inline-block bg-white text-pink-950 px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-pink-100 transition-colors shadow-lg shadow-black/10">
+              Start a Conversation
+            </Link>
+          </div>
+        </motion.div>
       </section>
-
-      {/* Footer Snapshot */}
-      <footer className="py-12 border-t border-white/5 bg-black">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] text-white/30 tracking-widest uppercase">
-          <div className="flex items-center gap-2">
-            <Terminal className="w-4 h-4 text-accent" />
-            <p>© 2026 DEV WITH MERCEDES — ENGINEERED WITH PRECISION</p>
-          </div>
-          <div className="flex gap-12">
-            <a href="https://www.linkedin.com/in/michelle-amfo-906243409" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
-            <a href="https://github.com/michelleamfo2007-blip" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
-            <a href="https://www.tiktok.com/@devwithmercedes" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">TikTok</a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
