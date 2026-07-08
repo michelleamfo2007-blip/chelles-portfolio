@@ -43,8 +43,8 @@ export const Home = () => {
       icon: <Layout className="w-8 h-8" />
     },
     {
-      title: "Creative Solutions",
-      description: "Merging aesthetic elegance with robust engineering to solve complex business problems visually.",
+      title: "Backend Engineering",
+      description: "Developing secure, high-performance server-side applications and robust APIs to power scalable digital products.",
       icon: <Sparkles className="w-8 h-8" />
     }
   ];
@@ -143,9 +143,6 @@ export const Home = () => {
                 key={idx} 
                 className="vendor-card group"
               >
-                <div className="text-pink-600 mb-6 group-hover:scale-110 group-hover:text-pink-500 transition-all origin-left bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center">
-                  {service.icon}
-                </div>
                 <h3 className="text-xl font-bold mb-3 text-pink-950">{service.title}</h3>
                 <p className="text-pink-800/70 text-sm leading-relaxed">{service.description}</p>
               </motion.div>

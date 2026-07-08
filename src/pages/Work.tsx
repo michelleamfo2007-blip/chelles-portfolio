@@ -122,9 +122,6 @@ export const Work = () => {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <div className="aspect-square bg-white border border-pink-100 rounded-3xl p-12 flex flex-col justify-center shadow-xl shadow-pink-900/5">
-                 <div className="text-pink-600 mb-8">
-                    <CheckCircle2 className="w-16 h-16" />
-                 </div>
                  <h3 className="text-3xl font-serif italic mb-6 text-pink-950">Quality without compromise.</h3>
                  <p className="text-pink-800/80 text-base leading-relaxed">
                     I believe that the "invisible" parts of a project—the clean code, 

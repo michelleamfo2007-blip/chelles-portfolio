@@ -5,8 +5,8 @@ import { Heart, Briefcase, GraduationCap, MapPin, Sparkles, Target, Zap, Coffee,
 
 export const About = () => {
   const milestones = [
-    { year: "2024", title: "Full Stack Certification", desc: "Advanced engineering and cloud architecture." },
-    { year: "2025", title: "Lead Developer", desc: "Spearheading high-impact digital products." },
+    { year: "2024", title: "Coding Journey Begins", desc: "Started learning how to code and building foundations." },
+    { year: "2025", title: "Full Stack Certification", desc: "Advanced engineering and cloud architecture." },
     { year: "2026", title: "Founder, Dev with Mercedes", desc: "Building a bridge between design and engineering." }
   ];
 
@@ -184,7 +184,6 @@ export const About = () => {
                        { icon: <Heart className="w-6 h-6" />, label: "Design", desc: "Passionate about minimalism." }
                      ].map((item, i) => (
                        <div key={i} className="card group hover:-translate-y-1 transition-transform">
-                          <div className="text-pink-600 mb-4 bg-pink-50 w-12 h-12 rounded-full flex items-center justify-center group-hover:bg-pink-600 group-hover:text-white transition-colors">{item.icon}</div>
                           <div className="text-sm font-bold uppercase tracking-widest text-pink-950 mb-2">{item.label}</div>
                           <div className="text-pink-800/60 text-xs leading-relaxed uppercase font-medium">{item.desc}</div>
                        </div>
@@ -206,7 +205,6 @@ export const About = () => {
       {/* Philosophy Callout */}
       <section className="section py-32 bg-pink-50">
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
-           <Heart className="w-16 h-16 text-pink-500 mx-auto mb-10 opacity-80" />
            <h3 className="text-4xl md:text-6xl font-serif italic text-pink-950 tracking-tighter leading-tight mb-12">
              "I don't just build websites. I engineer digital legacies that feel alive."
            </h3>
