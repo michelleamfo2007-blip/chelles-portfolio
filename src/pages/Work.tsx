@@ -1,10 +1,28 @@
 import { motion } from "motion/react";
 import { ProjectCard } from "../components/ProjectCard";
 import { Link } from "react-router-dom";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const Work = () => {
   const projects = [
+    {
+      title: "SmartAttend",
+      description: "A GPS attendance platform for modern campuses—landing page plus mobile app with dynamic QR check-in, geofencing, and a web dashboard for lecturers and admins.",
+      link: "www.smartattend.co",
+      tags: ["Landing Page", "Mobile App", "GPS"],
+    },
+    {
+      title: "KlarElle",
+      description: "An elegant e-commerce store for occasion dresses and evening gowns, built for a refined shopping experience.",
+      link: "www.klarelle.store",
+      tags: ["E-commerce", "Fashion", "Store"],
+    },
+    {
+      title: "Shopora",
+      description: "An all-in-one e-commerce platform for modern sellers—bring your own payment gateway, keep 100% of revenue, and automate operations.",
+      link: "shopora.space",
+      tags: ["E-commerce", "SaaS", "Platform"],
+    },
     {
       title: "Grade Guard",
       description: "A comprehensive grading and scanning platform designed for seamless academic and vendor performance tracking.",

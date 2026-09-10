@@ -1,34 +1,34 @@
 import { motion } from "motion/react";
-import { Github, Linkedin, ChevronRight, Layout, Database, Sparkles, Terminal, MessageCircle } from "lucide-react";
+import { Github, Linkedin, ChevronRight, Layout, Database, Sparkles, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ProjectCard } from "../components/ProjectCard";
 
 export const Home = () => {
   const featuredProjects = [
     {
+      title: "SmartAttend",
+      description: "A GPS attendance platform for modern campuses—landing page plus mobile app with dynamic QR check-in, geofencing, and a web dashboard for lecturers and admins.",
+      link: "www.smartattend.co",
+      tags: ["Landing Page", "Mobile App", "GPS"],
+    },
+    {
+      title: "KlarElle",
+      description: "An elegant e-commerce store for occasion dresses and evening gowns, built for a refined shopping experience.",
+      link: "www.klarelle.store",
+      tags: ["E-commerce", "Fashion", "Store"],
+    },
+    {
+      title: "Shopora",
+      description: "An all-in-one e-commerce platform for modern sellers—bring your own payment gateway, keep 100% of revenue, and automate operations.",
+      link: "shopora.space",
+      tags: ["E-commerce", "SaaS", "Platform"],
+    },
+    {
       title: "Journee Suites",
       description: "A luxury boutique stay showcase featuring an immersive 360° virtual tour and premium architectural storytelling.",
       link: "journee-suites.vercel.app",
       tags: ["Next.js", "Tailwind CSS", "360° Tour"],
     },
-    {
-      title: "UCMAS Management System",
-      description: "A robust administrative portal for managing student records, grading, and operational workflows with precision.",
-      link: "ucmas-cape-coast-management-system.vercel.app",
-      tags: ["React", "Admin Portal", "Workflow"],
-    },
-    {
-      title: "Dev with Mercedes Portfolio",
-      description: "A premium digital archive showcasing the fusion of high-performance engineering and architectural design.",
-      link: "chelles-portfolio.vercel.app",
-      tags: ["React", "Motion", "Premium UI"],
-    },
-    {
-      title: "Guan Web",
-      description: "A cultural heritage portal designed to preserve and showcase the linguistic and historical legacy of the Guan people.",
-      link: "guan-web.vercel.app",
-      tags: ["React", "Motion", "Architecture"],
-    }
   ];
 
   const services = [
