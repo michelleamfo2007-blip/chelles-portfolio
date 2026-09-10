@@ -64,7 +64,7 @@ export const projects: Project[] = [
     title: "Dev with Mercedes Portfolio",
     description:
       "A premium digital archive showcasing the fusion of high-performance engineering and architectural design.",
-    link: "chelles-portfolio.vercel.app",
+    link: "devwithmercedes.site",
     tags: ["React", "Motion", "Premium UI"],
   },
   {
