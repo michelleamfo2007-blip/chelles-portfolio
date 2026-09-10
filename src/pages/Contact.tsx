@@ -1,5 +1,17 @@
+import { useState, type FormEvent } from "react";
 import { motion } from "motion/react";
-import { Mail, Linkedin, Github, MessageCircle, MapPin, Send, MessageSquare, Clock, Phone } from "lucide-react";
+import { Mail, Linkedin, Github, MessageCircle, Send, Phone, CheckCircle2 } from "lucide-react";
+
+type FormState = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
+
+type FormErrors = Partial<Record<keyof FormState, string>>;
+
+const CONTACT_EMAIL = "devwithmercedes@gmail.com";
 
 export const Contact = () => {
   const faqs = [
@@ -7,6 +19,46 @@ export const Contact = () => {
     { q: "Are you available for full-time roles?", a: "Yes, I am open to high-impact roles in design-driven engineering teams." },
     { q: "Do you offer post-launch support?", a: "Absolutely. I provide maintenance packages to ensure your product scales safely." }
   ];
+
+  const [form, setForm] = useState<FormState>({
+    name: "",
+    email: "",
+    subject: "Project Inquiry",
+    message: "",
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [submitted, setSubmitted] = useState(false);
+
+  const validate = (): FormErrors => {
+    const next: FormErrors = {};
+    if (!form.name.trim()) next.name = "Name is required.";
+    if (!form.email.trim()) {
+      next.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      next.email = "Enter a valid email address.";
+    }
+    if (!form.message.trim()) next.message = "Message is required.";
+    else if (form.message.trim().length < 10) next.message = "Message should be at least 10 characters.";
+    return next;
+  };
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const nextErrors = validate();
+    setErrors(nextErrors);
+    if (Object.keys(nextErrors).length > 0) return;
+
+    const body = [
+      `Name: ${form.name.trim()}`,
+      `Email: ${form.email.trim()}`,
+      "",
+      form.message.trim(),
+    ].join("\n");
+
+    const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+    setSubmitted(true);
+  };
 
   return (
     <div className="bg-off-white text-pink-950 min-h-screen">
@@ -23,8 +75,8 @@ export const Contact = () => {
               Let's build <br />
               <span className="not-italic text-pink-light">extraordinary.</span>
             </h1>
-            <p className="max-w-2xl text-pink-100 text-lg md:text-xl font-light leading-relaxed">
-              I'm always open to discussing new projects, creative ideas, or opportunities 
+            <p className="max-w-2xl text-slate-300 text-lg md:text-xl font-light leading-relaxed">
+              I'm always open to discussing new projects, creative ideas, or opportunities
               to be part of your visions. Let's create something that leaves a lasting impact.
             </p>
           </motion.div>
@@ -43,8 +95,8 @@ export const Contact = () => {
                         <div className="p-3 bg-pink-50 rounded-lg group-hover:bg-pink-100 transition-colors"><Mail className="w-5 h-5" /></div>
                         <span className="text-[10px] uppercase tracking-widest font-bold">Direct Email</span>
                      </div>
-                     <a href="mailto:devwithmercedes@gmail.com" className="text-sm font-medium hover:text-pink-600 transition-colors block text-pink-950">
-                        devwithmercedes@gmail.com
+                     <a href={`mailto:${CONTACT_EMAIL}`} className="text-sm font-medium hover:text-pink-600 transition-colors block text-pink-950">
+                        {CONTACT_EMAIL}
                      </a>
                   </div>
                   <div className="card group hover:-translate-y-1 transition-transform">
@@ -75,33 +127,82 @@ export const Contact = () => {
                </div>
 
                {/* Availability Indicator */}
-               <div className="p-8 bg-pink-950 rounded-xl flex items-center gap-6 shadow-xl shadow-pink-950/10">
-                  <div className="w-4 h-4 bg-pink-400 rounded-full animate-pulse shadow-[0_0_15px_rgba(244,114,182,0.6)]" />
+               <div className="p-8 bg-pink-950 rounded-xl flex items-center gap-6">
+                  <div className="w-3 h-3 bg-pink-500 rounded-full animate-pulse" />
                   <div>
                      <div className="text-xs font-bold uppercase tracking-widest mb-1 text-white">Available for new projects</div>
-                     <div className="text-pink-200/80 text-[10px] uppercase tracking-widest">Response time: within 24 hours</div>
+                     <div className="text-slate-400 text-[10px] uppercase tracking-widest">Response time: within 24 hours</div>
                   </div>
                </div>
             </div>
 
             {/* Right Side: Form */}
             <div className="card-elevated relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-pink-100/50 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
                <h3 className="text-3xl font-serif italic mb-10 text-pink-950">Send a Message</h3>
-               <form className="space-y-8">
+
+               {submitted ? (
+                 <motion.div
+                   initial={{ opacity: 0, y: 8 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   className="flex flex-col items-start gap-4 py-8"
+                 >
+                   <CheckCircle2 className="w-10 h-10 text-pink-600" />
+                   <p className="text-lg font-medium text-pink-950">Your email client should open shortly.</p>
+                   <p className="text-sm text-pink-700 leading-relaxed">
+                     If nothing opened, email me directly at{" "}
+                     <a href={`mailto:${CONTACT_EMAIL}`} className="text-pink-600 underline underline-offset-2">
+                       {CONTACT_EMAIL}
+                     </a>
+                     .
+                   </p>
+                   <button
+                     type="button"
+                     onClick={() => {
+                       setSubmitted(false);
+                       setForm({ name: "", email: "", subject: "Project Inquiry", message: "" });
+                       setErrors({});
+                     }}
+                     className="mt-4 text-sm font-bold uppercase tracking-widest text-pink-600 hover:text-pink-500"
+                   >
+                     Send another message
+                   </button>
+                 </motion.div>
+               ) : (
+               <form className="space-y-8" onSubmit={handleSubmit} noValidate>
                   <div className="grid md:grid-cols-2 gap-8">
                      <div className="space-y-2">
-                        <label className="text-[10px] font-bold uppercase tracking-widest text-pink-700">Your Name</label>
-                        <input type="text" placeholder="John Doe" className="w-full bg-pink-50 border border-pink-100 rounded-lg px-4 py-3 focus:border-pink-500 focus:bg-white outline-none text-sm transition-colors text-pink-950 placeholder:text-pink-300" />
+                        <label className="text-[10px] font-bold uppercase tracking-widest text-pink-700" htmlFor="contact-name">Your Name</label>
+                        <input
+                          id="contact-name"
+                          type="text"
+                          value={form.name}
+                          onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                          placeholder="John Doe"
+                          className={`w-full bg-pink-50 border rounded-lg px-4 py-3 focus:border-pink-600 focus:bg-white outline-none text-sm transition-colors text-pink-950 placeholder:text-pink-300 ${errors.name ? "border-red-400" : "border-pink-100"}`}
+                        />
+                        {errors.name && <p className="text-xs text-red-500">{errors.name}</p>}
                      </div>
                      <div className="space-y-2">
-                        <label className="text-[10px] font-bold uppercase tracking-widest text-pink-700">Email Address</label>
-                        <input type="email" placeholder="john@example.com" className="w-full bg-pink-50 border border-pink-100 rounded-lg px-4 py-3 focus:border-pink-500 focus:bg-white outline-none text-sm transition-colors text-pink-950 placeholder:text-pink-300" />
+                        <label className="text-[10px] font-bold uppercase tracking-widest text-pink-700" htmlFor="contact-email">Email Address</label>
+                        <input
+                          id="contact-email"
+                          type="email"
+                          value={form.email}
+                          onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                          placeholder="john@example.com"
+                          className={`w-full bg-pink-50 border rounded-lg px-4 py-3 focus:border-pink-600 focus:bg-white outline-none text-sm transition-colors text-pink-950 placeholder:text-pink-300 ${errors.email ? "border-red-400" : "border-pink-100"}`}
+                        />
+                        {errors.email && <p className="text-xs text-red-500">{errors.email}</p>}
                      </div>
                   </div>
                   <div className="space-y-2">
-                     <label className="text-[10px] font-bold uppercase tracking-widest text-pink-700">Subject</label>
-                     <select className="w-full bg-pink-50 border border-pink-100 rounded-lg px-4 py-3 focus:border-pink-500 focus:bg-white outline-none text-sm transition-colors text-pink-950">
+                     <label className="text-[10px] font-bold uppercase tracking-widest text-pink-700" htmlFor="contact-subject">Subject</label>
+                     <select
+                       id="contact-subject"
+                       value={form.subject}
+                       onChange={(e) => setForm((f) => ({ ...f, subject: e.target.value }))}
+                       className="w-full bg-pink-50 border border-pink-100 rounded-lg px-4 py-3 focus:border-pink-600 focus:bg-white outline-none text-sm transition-colors text-pink-950"
+                     >
                         <option>Project Inquiry</option>
                         <option>Collaboration</option>
                         <option>Full-time Opportunity</option>
@@ -109,14 +210,23 @@ export const Contact = () => {
                      </select>
                   </div>
                   <div className="space-y-2">
-                     <label className="text-[10px] font-bold uppercase tracking-widest text-pink-700">Message</label>
-                     <textarea rows={4} placeholder="Tell me about your project..." className="w-full bg-pink-50 border border-pink-100 rounded-lg px-4 py-3 focus:border-pink-500 focus:bg-white outline-none text-sm transition-colors resize-none text-pink-950 placeholder:text-pink-300" />
+                     <label className="text-[10px] font-bold uppercase tracking-widest text-pink-700" htmlFor="contact-message">Message</label>
+                     <textarea
+                       id="contact-message"
+                       rows={4}
+                       value={form.message}
+                       onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                       placeholder="Tell me about your project..."
+                       className={`w-full bg-pink-50 border rounded-lg px-4 py-3 focus:border-pink-600 focus:bg-white outline-none text-sm transition-colors resize-none text-pink-950 placeholder:text-pink-300 ${errors.message ? "border-red-400" : "border-pink-100"}`}
+                     />
+                     {errors.message && <p className="text-xs text-red-500">{errors.message}</p>}
                   </div>
-                  <button type="button" className="w-full h-14 bg-pink-950 text-white text-[11px] font-bold uppercase tracking-widest hover:bg-pink-800 transition-all flex items-center justify-center gap-3 rounded-lg shadow-lg group mt-4">
+                  <button type="submit" className="w-full h-14 bg-pink-950 text-white text-[11px] font-bold uppercase tracking-widest hover:bg-pink-800 transition-all flex items-center justify-center gap-3 rounded-lg shadow-lg group mt-4">
                      Submit Inquiry
                      <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </button>
                </form>
+               )}
             </div>
           </div>
         </div>
@@ -134,10 +244,10 @@ export const Contact = () => {
                   {faqs.map((faq, i) => (
                      <div key={i} className="card group">
                         <h4 className="text-lg font-serif italic mb-4 text-pink-950 flex items-center gap-4">
-                           <span className="text-pink-300 font-mono text-xs font-bold">0{i+1}</span>
+                           <span className="text-pink-400 font-mono text-xs font-bold">0{i+1}</span>
                            {faq.q}
                         </h4>
-                        <p className="text-pink-800/70 text-sm leading-relaxed pl-10">
+                        <p className="text-pink-700 text-sm leading-relaxed pl-10">
                            {faq.a}
                         </p>
                      </div>
