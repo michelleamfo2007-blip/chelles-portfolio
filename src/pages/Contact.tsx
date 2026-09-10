@@ -62,22 +62,48 @@ export const Contact = () => {
 
   return (
     <div className="bg-off-white text-pink-950 min-h-screen">
-      {/* Hero Header */}
-      <section className="hero-container relative pt-32 pb-20 overflow-hidden min-h-[50vh] flex items-center">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 w-full">
+      {/* Hero — centered invite + arc */}
+      <section className="hero-container hero-page relative overflow-hidden flex items-center">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden>
+          <svg className="w-[min(90vw,520px)] h-[min(90vw,520px)] hero-arc-glow" viewBox="0 0 400 400" fill="none">
+            <circle cx="200" cy="200" r="160" stroke="rgba(96,165,250,0.15)" strokeWidth="1" />
+            <path
+              d="M60 200 A140 140 0 0 1 340 200"
+              stroke="url(#contactArc)"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <defs>
+              <linearGradient id="contactArc" x1="60" y1="200" x2="340" y2="200">
+                <stop stopColor="#2563eb" stopOpacity="0" />
+                <stop offset="0.5" stopColor="#93c5fd" stopOpacity="0.9" />
+                <stop offset="1" stopColor="#2563eb" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div className="max-w-7xl mx-auto w-full relative z-10 px-4 md:px-6 pt-28 pb-16">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            className="max-w-3xl mx-auto text-center"
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-pink-light font-mono text-xs tracking-[0.2em] uppercase block mb-6">Inquiry</span>
-            <h1 className="text-5xl md:text-8xl font-serif italic tracking-tighter leading-[0.9] mb-8 text-white">
-              Let's build <br />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-pink-500/30 bg-white/5 mb-8">
+              <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" />
+              <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-pink-light">
+                Open for projects
+              </span>
+            </div>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tighter leading-[0.92] mb-6 text-white">
+              <span className="italic font-light">Let's build</span>
+              <br />
               <span className="not-italic text-pink-light">extraordinary.</span>
             </h1>
-            <p className="max-w-2xl text-slate-300 text-lg md:text-xl font-light leading-relaxed">
-              I'm always open to discussing new projects, creative ideas, or opportunities
-              to be part of your visions. Let's create something that leaves a lasting impact.
+            <p className="max-w-lg mx-auto text-slate-300 text-base md:text-lg font-light leading-relaxed">
+              New projects, collaborations, or full-time roles — tell me what you're
+              building and we'll take it from there.
             </p>
           </motion.div>
         </div>

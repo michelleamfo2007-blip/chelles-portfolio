@@ -22,22 +22,38 @@ export const About = () => {
 
   return (
     <div className="bg-off-white text-pink-950">
-      {/* Intro Header */}
-      <section className="hero-container relative pt-32 pb-20 overflow-hidden min-h-[50vh] flex items-center">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 w-full">
+      {/* Hero — editorial rings */}
+      <section className="hero-container hero-page relative overflow-hidden flex items-center">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden>
+          <div className="absolute w-[28rem] h-[28rem] rounded-full border border-pink-400/15 hero-ring-pulse" />
+          <div className="absolute w-[36rem] h-[36rem] rounded-full border border-pink-500/10 hero-ring-pulse" style={{ animationDelay: "-2s" }} />
+          <div className="absolute w-[44rem] h-[44rem] rounded-full border border-dashed border-slate-500/20" />
+        </div>
+        <div
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 hidden sm:block writing-mode-vertical font-mono text-[10px] tracking-[0.4em] uppercase text-slate-500"
+          aria-hidden
+        >
+          Accra · Ghana · Est. 2024
+        </div>
+
+        <div className="max-w-7xl mx-auto w-full relative z-10 px-4 md:px-6 pt-28 pb-16">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            className="max-w-3xl mx-auto text-center"
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-pink-light font-mono text-xs tracking-[0.2em] uppercase block mb-6">The Architect</span>
-            <h1 className="text-5xl md:text-8xl font-serif italic tracking-tighter leading-[0.9] mb-8 text-white">
-              Dev with <br />
+            <span className="text-pink-light font-mono text-[11px] tracking-[0.25em] uppercase block mb-5">
+              The Architect
+            </span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tighter leading-[0.92] mb-6 text-white">
+              <span className="italic font-light">Dev with</span>
+              <br />
               <span className="not-italic text-pink-light">Mercedes.</span>
             </h1>
-            <p className="max-w-2xl text-pink-100 text-lg md:text-xl font-light leading-relaxed">
-              I am Michelle Nhyira Amfo, a developer dedicated to crafting seamless digital ecosystems. 
-              My journey is defined by a relentless pursuit of performance, elegance, and user-centric architecture.
+            <p className="max-w-xl mx-auto text-slate-300 text-base md:text-lg font-light leading-relaxed">
+              Michelle Nhyira Amfo — crafting seamless digital ecosystems with a
+              relentless focus on performance, elegance, and people.
             </p>
           </motion.div>
         </div>

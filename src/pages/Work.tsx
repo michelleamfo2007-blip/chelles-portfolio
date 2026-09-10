@@ -24,23 +24,59 @@ export const Work = () => {
 
   return (
     <div className="bg-off-white text-pink-950">
-      {/* Hero / Intro */}
-      <section className="hero-container relative pt-32 pb-20 overflow-hidden min-h-[50vh] flex items-center">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 w-full">
+      {/* Hero — archive / index layout */}
+      <section className="hero-container hero-page relative overflow-hidden flex items-center">
+        <div className="absolute inset-0 hero-work-grid" aria-hidden />
+        <div className="absolute right-0 top-0 bottom-0 w-1/2 max-w-xl pointer-events-none" aria-hidden>
+          <div className="absolute inset-x-0 h-24 bg-gradient-to-b from-transparent via-pink-600/20 to-transparent hero-work-scan blur-sm" />
+        </div>
+
+        <div className="max-w-7xl mx-auto w-full relative z-10 px-4 md:px-6 pt-28 pb-16 grid lg:grid-cols-12 gap-10 items-end">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            className="lg:col-span-7"
+            initial={{ opacity: 0, x: -24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-pink-light font-mono text-xs tracking-[0.2em] uppercase block mb-6">Case Studies</span>
-            <h1 className="text-5xl md:text-8xl font-serif italic tracking-tighter leading-[0.9] mb-8 text-white">
-              Selected <br />
+            <span className="text-pink-light font-mono text-[11px] tracking-[0.25em] uppercase block mb-5">
+              Case Studies · Archive
+            </span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tighter leading-[0.9] mb-6 text-white">
+              <span className="italic font-light">Selected</span>
+              <br />
               <span className="not-italic text-pink-light">Projects.</span>
             </h1>
-            <p className="max-w-2xl text-slate-300 text-lg md:text-xl font-light leading-relaxed">
-              A curated collection of digital solutions where high-performance engineering
-              meets refined design. Every project is an exercise in precision and user-centric architecture.
+            <p className="max-w-lg text-slate-300 text-base md:text-lg font-light leading-relaxed">
+              Digital products where engineering precision meets refined design—
+              from campus platforms to commerce systems.
             </p>
+          </motion.div>
+
+          <motion.div
+            className="lg:col-span-5 font-mono text-right"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            aria-hidden
+          >
+            <div className="text-7xl md:text-8xl font-bold text-white/10 leading-none tabular-nums">
+              {String(projects.length).padStart(2, "0")}
+            </div>
+            <div className="text-[11px] tracking-[0.2em] uppercase text-pink-light mt-2 mb-6">
+              Shipped works
+            </div>
+            <ul className="space-y-2 text-left lg:text-right max-w-xs ml-auto">
+              {projects.slice(0, 5).map((p, i) => (
+                <li
+                  key={p.link}
+                  className="text-xs text-slate-400 truncate"
+                  style={{ opacity: 1 - i * 0.15 }}
+                >
+                  <span className="text-pink-500 mr-2">{String(i + 1).padStart(2, "0")}</span>
+                  {p.title}
+                </li>
+              ))}
+            </ul>
           </motion.div>
         </div>
       </section>

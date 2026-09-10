@@ -299,6 +299,64 @@
     animation: hero-float-alt 11s ease-in-out infinite;
   }
 
+  .hero-page {
+    border-radius: 0;
+    margin-bottom: 0;
+    min-height: min(72svh, 640px);
+  }
+
+  /* Work — archive / index grid */
+  .hero-work-grid {
+    background-image:
+      linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 70% 80% at 80% 50%, black 20%, transparent 75%);
+  }
+
+  .hero-work-scan {
+    animation: hero-scan 4.5s ease-in-out infinite;
+  }
+
+  @keyframes hero-scan {
+    0%, 100% { transform: translateY(-20%); opacity: 0.15; }
+    50% { transform: translateY(120%); opacity: 0.45; }
+  }
+
+  /* Skills — orbital ring */
+  .hero-orbit {
+    animation: hero-orbit-spin 28s linear infinite;
+  }
+
+  .hero-orbit-rev {
+    animation: hero-orbit-spin 38s linear infinite reverse;
+  }
+
+  @keyframes hero-orbit-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* About — soft rings */
+  .hero-ring-pulse {
+    animation: hero-ring 6s ease-in-out infinite;
+  }
+
+  @keyframes hero-ring {
+    0%, 100% { transform: scale(1); opacity: 0.35; }
+    50% { transform: scale(1.06); opacity: 0.55; }
+  }
+
+  /* Contact — arc draw */
+  .hero-arc-glow {
+    animation: hero-arc 5s ease-in-out infinite;
+  }
+
+  @keyframes hero-arc {
+    0%, 100% { opacity: 0.35; transform: rotate(-8deg); }
+    50% { opacity: 0.7; transform: rotate(8deg); }
+  }
+
   .filter-chip {
     font-family: var(--font-mono);
     font-size: 11px;
