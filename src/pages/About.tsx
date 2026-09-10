@@ -65,11 +65,6 @@ export const About = () => {
                    </div>
                 </div>
               </div>
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-white rounded-full flex items-center justify-center animate-spin-slow shadow-lg border border-pink-100">
-                 <div className="text-[9px] font-mono text-pink-700 uppercase tracking-tighter text-center font-bold">
-                    Engineering <br /> Excellence
-                 </div>
-              </div>
             </div>
 
             <div className="card-elevated">
