@@ -26,45 +26,77 @@ export const Home = () => {
   return (
     <div className="bg-off-white text-pink-950">
       {/* Hero Section */}
-      <section className="hero-container relative min-h-[80vh] flex items-center overflow-hidden">
-        <div className="absolute top-1/4 -right-1/4 w-[500px] h-[500px] bg-pink-600/15 blur-[120px] rounded-full" />
-        <div className="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-pink-400/10 blur-[120px] rounded-full" />
+      <section className="hero-container hero-modern relative flex items-center overflow-hidden">
+        {/* Atmosphere */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(37,99,235,0.18),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(96,165,250,0.08),transparent_40%)]" />
+        <div className="absolute inset-0 opacity-[0.04] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8Y2lyY2xlIGN4PSIyIiBjeT0iMiIgcj0iMSIgZmlsbD0iI2ZmZiI+PC9jaXJjbGU+Cjwvc3ZnPg==')]" />
 
-        <div className="max-w-7xl mx-auto w-full relative z-10 px-4 md:px-6">
+        <div className="max-w-7xl mx-auto w-full relative z-10 px-4 md:px-6 pt-24 pb-16 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-pink-light font-mono text-xs tracking-[0.2em] uppercase block mb-6 px-2 border-l-2 border-pink-light/50">
+            <p className="font-serif italic text-2xl md:text-3xl text-white/90 mb-6 tracking-tight">
+              Michelleeee<span className="text-pink-light">.</span>
+            </p>
+            <span className="text-pink-light font-mono text-[11px] tracking-[0.25em] uppercase block mb-6">
               Available for Freelance
             </span>
-            <h1 className="text-5xl sm:text-[60px] md:text-[90px] lg:text-[120px] font-serif italic font-light tracking-tighter leading-[0.9] mb-8 text-white">
-              Full Stack <br />
-              <span className="not-italic text-pink-light">Developer.</span>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-serif tracking-tighter leading-[0.92] mb-8 text-white">
+              <span className="italic font-light">Full Stack</span>
+              <br />
+              <span className="not-italic font-medium text-pink-light">Developer.</span>
             </h1>
-            <p className="max-w-2xl text-lg md:text-xl text-slate-300 leading-relaxed mb-10 font-light">
-              Architecting seamless digital ecosystems from concept to cloud deployment.
-              Focused on performance, elegance, and user-centric architecture.
+            <p className="max-w-md text-base md:text-lg text-slate-300/90 leading-relaxed mb-10 font-light">
+              Architecting seamless digital ecosystems from concept to cloud—
+              performance, elegance, and user-centric systems.
             </p>
 
-            <div className="flex flex-wrap gap-8 items-center">
-              <Link to="/work" className="group relative bg-white text-pink-950 px-6 py-3 rounded-md font-bold uppercase tracking-widest flex items-center gap-3 transition-transform hover:scale-105 shadow-lg shadow-black/20">
+            <div className="flex flex-wrap gap-6 items-center">
+              <Link
+                to="/work"
+                className="group bg-pink-600 hover:bg-pink-500 text-white px-7 py-3.5 rounded-md font-bold uppercase tracking-widest text-xs flex items-center gap-3 transition-colors"
+              >
                 <span>View Projects</span>
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
-              <div className="flex items-center gap-6">
-                <a href="https://github.com/michelleamfo2007-blip" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 hover:text-pink-light transition-colors text-white">
-                  <Github className="w-6 h-6" />
+              <div className="flex items-center gap-5">
+                <a href="https://github.com/michelleamfo2007-blip" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-pink-light transition-colors" aria-label="GitHub">
+                  <Github className="w-5 h-5" />
                 </a>
-                <a href="https://www.linkedin.com/in/michelle-amfo-906243409" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 hover:text-pink-light transition-colors text-white">
-                  <Linkedin className="w-6 h-6" />
+                <a href="https://www.linkedin.com/in/michelle-amfo-906243409" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-pink-light transition-colors" aria-label="LinkedIn">
+                  <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://www.tiktok.com/@devwithmercedes" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 hover:text-pink-light transition-colors text-white">
-                  <MessageCircle className="w-6 h-6" />
+                <a href="https://www.tiktok.com/@devwithmercedes" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-pink-light transition-colors" aria-label="TikTok">
+                  <MessageCircle className="w-5 h-5" />
                 </a>
               </div>
             </div>
+          </motion.div>
+
+          {/* Abstract visual plane */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="relative h-[340px] sm:h-[420px] lg:h-[520px] w-full"
+            aria-hidden
+          >
+            <div className="hero-blob hero-float absolute right-[8%] top-[6%] w-[72%] h-[72%]">
+              <div className="hero-blob-ring" />
+              <div className="hero-blob-core" />
+            </div>
+            <div className="hero-blob hero-float-alt absolute left-[2%] bottom-[4%] w-[48%] h-[48%]" style={{ animationDelay: "-2s" }}>
+              <div className="hero-blob-ring opacity-40" />
+              <div className="hero-blob-core" style={{ borderRadius: "58% 42% 40% 60% / 45% 55% 45% 55%" }} />
+            </div>
+            <div className="hero-blob hero-float absolute right-[2%] bottom-[18%] w-[28%] h-[28%]" style={{ animationDelay: "-4s" }}>
+              <div className="hero-blob-ring opacity-30" />
+              <div className="hero-blob-core" style={{ borderRadius: "40% 60% 55% 45% / 55% 40% 60% 45%" }} />
+            </div>
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-pink-600/20 blur-[60px] rounded-full" />
           </motion.div>
         </div>
       </section>
