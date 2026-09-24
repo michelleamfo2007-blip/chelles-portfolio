@@ -1,0 +1,49 @@
+backend:
+  name: github
+  repo: michelleamfo2007-blip/chelles-portfolio
+  branch: main
+  base_url: https://devwithmercedes.site
+  auth_endpoint: api/auth
+  commit_messages:
+    update: "content: update {{slug}} via dashboard"
+
+local_backend: true
+
+site_url: https://devwithmercedes.site
+display_url: https://devwithmercedes.site
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: portfolio
+    label: Portfolio
+    files:
+      - name: projects
+        label: Projects
+        file: src/data/projects.json
+        format: json
+        fields:
+          - name: projects
+            label: Projects
+            label_singular: Project
+            widget: list
+            summary: "{{fields.title}}"
+            add_to_top: true
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - label: Link
+                name: link
+                widget: string
+                hint: "Domain only, no https:// (e.g. shopora.space)"
+              - label: Tags
+                name: tags
+                widget: list
+                hint: "Comma-separated, e.g. React, E-commerce, SaaS"
+                default: []
+              - label: Featured on Home
+                name: featured
+                widget: boolean
+                default: false
+                required: false
