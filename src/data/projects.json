@@ -1,6 +1,13 @@
 {
   "projects": [
     {
+      "title": "Noir Men",
+      "description": "A premium menswear e-commerce store based in Accra—considered cuts, modern luxury, and a refined shopping experience.",
+      "link": "noirmen.online",
+      "tags": ["E-commerce", "Fashion", "Store"],
+      "featured": true
+    },
+    {
       "title": "SmartAttend",
       "description": "A GPS attendance platform for modern campuses—landing page plus mobile app with dynamic QR check-in, geofencing, and a web dashboard for lecturers and admins.",
       "link": "www.smartattend.co",
@@ -33,7 +40,7 @@
       "description": "A luxury boutique stay showcase featuring an immersive 360° virtual tour and premium architectural storytelling.",
       "link": "journee-suites.vercel.app",
       "tags": ["Next.js", "Tailwind CSS", "360° Tour"],
-      "featured": true
+      "featured": false
     },
     {
       "title": "Okissibiri Technology",
