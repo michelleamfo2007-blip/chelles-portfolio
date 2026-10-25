@@ -50,13 +50,6 @@
       "featured": false
     },
     {
-      "title": "UCMAS Management System",
-      "description": "A robust administrative portal for managing student records, grading, and operational workflows with precision.",
-      "link": "ucmas-cape-coast-management-system.vercel.app",
-      "tags": ["React", "Admin Portal", "Workflow"],
-      "featured": false
-    },
-    {
       "title": "Dev with Mercedes Portfolio",
       "description": "A premium digital archive showcasing the fusion of high-performance engineering and architectural design.",
       "link": "devwithmercedes.site",
