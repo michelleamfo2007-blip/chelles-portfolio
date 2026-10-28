@@ -241,17 +241,60 @@
   }
 
   .hero-container {
-    background: radial-gradient(ellipse 80% 60% at 50% 40%, #1e293b 0%, #0f172a 55%, #020617 100%);
+    background:
+      radial-gradient(ellipse 70% 55% at 65% 35%, rgba(37, 99, 235, 0.22), transparent 55%),
+      radial-gradient(ellipse 50% 40% at 15% 80%, rgba(96, 165, 250, 0.12), transparent 50%),
+      radial-gradient(ellipse 80% 60% at 50% 40%, #1e293b 0%, #0f172a 55%, #020617 100%);
     padding: 32px 16px;
     color: white;
-    border-radius: 0 0 24px 24px;
-    margin-bottom: 16px;
+    border-radius: 0;
+    margin-bottom: 0;
+    position: relative;
+    isolation: isolate;
+  }
+
+  .hero-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    z-index: 0;
   }
 
   .hero-modern {
-    border-radius: 0;
-    margin-bottom: 0;
     min-height: 100svh;
+  }
+
+  .project-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .project-card:hover {
+    border-color: rgba(37, 99, 235, 0.45);
+    box-shadow: 0 20px 40px -24px rgba(15, 23, 42, 0.35);
+  }
+
+  .project-card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #2563eb, #93c5fd, transparent);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .project-card:hover .project-card-glow {
+    opacity: 1;
   }
 
   .hero-blob {
@@ -300,9 +343,7 @@
   }
 
   .hero-page {
-    border-radius: 0;
-    margin-bottom: 0;
-    min-height: min(72svh, 640px);
+    min-height: min(78svh, 720px);
   }
 
   /* Work — archive / index grid */

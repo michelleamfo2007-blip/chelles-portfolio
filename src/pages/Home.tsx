@@ -25,26 +25,22 @@ export const Home = () => {
 
   return (
     <div className="bg-off-white text-pink-950">
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="hero-container hero-modern relative flex items-center overflow-hidden">
-        {/* Atmosphere */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(37,99,235,0.18),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(96,165,250,0.08),transparent_40%)]" />
-        <div className="absolute inset-0 opacity-[0.04] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8Y2lyY2xlIGN4PSIyIiBjeT0iMiIgcj0iMSIgZmlsbD0iI2ZmZiI+PC9jaXJjbGU+Cjwvc3ZnPg==')]" />
-
         <div className="max-w-7xl mx-auto w-full relative z-10 px-4 md:px-6 pt-24 pb-16 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-serif italic text-2xl md:text-3xl text-white/90 mb-6 tracking-tight">
+            <p className="font-serif italic text-2xl md:text-3xl text-white/90 mb-5 tracking-tight">
               Michelleeee<span className="text-pink-light">.</span>
             </p>
-            <span className="text-pink-light font-mono text-[11px] tracking-[0.25em] uppercase block mb-6">
+            <span className="inline-flex items-center gap-2 text-pink-light font-mono text-[11px] tracking-[0.25em] uppercase mb-7">
+              <span className="w-1.5 h-1.5 rounded-sm bg-pink-500 animate-pulse" />
               Available for Freelance
             </span>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-serif tracking-tighter leading-[0.92] mb-8 text-white">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.75rem] font-serif tracking-tighter leading-[0.9] mb-8 text-white">
               <span className="italic font-light">Full Stack</span>
               <br />
               <span className="not-italic font-medium text-pink-light">Developer.</span>
@@ -76,7 +72,6 @@ export const Home = () => {
             </div>
           </motion.div>
 
-          {/* Abstract visual plane */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -101,111 +96,112 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Philosophy / Brief About */}
-      <section className="section py-20 relative overflow-hidden">
+      {/* Philosophy */}
+      <section className="py-24 md:py-32 relative overflow-hidden border-b border-pink-100">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid md:grid-cols-2 gap-16 items-center card-elevated"
+            className="grid md:grid-cols-12 gap-10 md:gap-16 items-end"
           >
-            <div>
-              <span className="text-pink-700 font-mono text-[12px] tracking-widest uppercase mb-4 block">Philosophy</span>
-              <h2 className="text-4xl md:text-5xl font-serif italic text-pink-950 tracking-tighter leading-tight mb-6">
-                Turning complexity into <br />
-                <span className="not-italic text-pink-600">effortless elegance.</span>
+            <div className="md:col-span-5">
+              <span className="text-pink-600 font-mono text-[11px] tracking-[0.25em] uppercase mb-5 block">Philosophy</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-pink-950 tracking-tighter leading-[1.05]">
+                Complexity into{" "}
+                <span className="not-italic text-pink-600">elegance.</span>
               </h2>
             </div>
-            <div className="text-pink-800/90 text-lg leading-relaxed space-y-6">
+            <div className="md:col-span-6 md:col-start-7 text-pink-800 text-lg leading-relaxed space-y-6 font-light">
               <p>
-                I specialize in bridging the gap between sophisticated backend engineering and
-                premium frontend experiences. My approach is rooted in the belief that great
-                software should be as beautiful as it is functional.
+                I bridge sophisticated backend engineering and premium frontend experiences.
+                Great software should be as beautiful as it is functional.
               </p>
-              <Link to="/about" className="inline-flex items-center gap-2 text-pink-600 text-sm uppercase tracking-widest font-bold group">
+              <Link to="/about" className="inline-flex items-center gap-2 text-pink-600 text-xs uppercase tracking-widest font-bold group">
                 Learn More
-                <div className="w-6 h-px bg-pink-600 group-hover:w-12 transition-all" />
+                <span className="w-6 h-px bg-pink-600 group-hover:w-12 transition-all" />
               </Link>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="section py-20 bg-pink-50 relative">
+      {/* Capabilities */}
+      <section className="py-24 md:py-28 bg-pink-50">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="mb-12">
-            <h2 className="section-title">My Capabilities</h2>
+          <div className="mb-14">
+            <span className="text-pink-600 font-mono text-[11px] tracking-[0.25em] uppercase mb-3 block">Services</span>
+            <h2 className="text-3xl md:text-4xl font-serif italic tracking-tighter text-pink-950">What I build</h2>
           </div>
-          <div className="grid-container">
+          <div className="grid md:grid-cols-3 gap-px bg-pink-200/60 border border-pink-200/60 overflow-hidden rounded-sm">
             {services.map((service, idx) => (
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                key={idx}
-                className="vendor-card group"
+                transition={{ duration: 0.45, delay: idx * 0.08 }}
+                key={service.title}
+                className="bg-white p-8 md:p-10 group hover:bg-pink-950 transition-colors duration-300"
               >
-                <h3 className="text-xl font-bold mb-3 text-pink-950">{service.title}</h3>
-                <p className="text-pink-700 text-sm leading-relaxed">{service.description}</p>
+                <span className="font-mono text-[10px] text-pink-400 group-hover:text-pink-400 tracking-widest mb-6 block">
+                  0{idx + 1}
+                </span>
+                <h3 className="text-xl font-semibold mb-3 text-pink-950 group-hover:text-white transition-colors">{service.title}</h3>
+                <p className="text-pink-700 group-hover:text-slate-300 text-sm leading-relaxed transition-colors">{service.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Projects Preview */}
-      <section className="section py-20">
+      {/* Featured */}
+      <section className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="flex justify-between items-end mb-12">
+          <div className="flex justify-between items-end mb-14 gap-6">
             <div>
-              <span className="text-pink-700 font-mono text-[12px] tracking-widest uppercase mb-2 block">Selected Archive</span>
-              <h2 className="section-title text-3xl md:text-4xl">Featured Works</h2>
+              <span className="text-pink-600 font-mono text-[11px] tracking-[0.25em] uppercase mb-3 block">Selected Archive</span>
+              <h2 className="text-3xl md:text-5xl font-serif italic tracking-tighter text-pink-950">Featured Works</h2>
             </div>
-            <Link to="/work" className="hidden md:flex text-pink-600 text-sm font-bold uppercase tracking-widest hover:text-pink-500 transition-colors items-center gap-2">
-              View All Projects <ChevronRight className="w-4 h-4" />
+            <Link to="/work" className="hidden md:inline-flex text-pink-600 text-xs font-bold uppercase tracking-widest hover:text-pink-500 transition-colors items-center gap-2">
+              View All <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-5 md:gap-6">
             {featuredProjects.map((project, idx) => (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
                 key={project.link}
               >
-                <ProjectCard {...project} />
+                <ProjectCard {...project} index={idx} />
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section pb-32">
+      {/* CTA */}
+      <section className="pb-28 px-4 md:px-6">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-5xl mx-auto px-6 py-24 bg-pink-950 rounded-[32px] text-center relative overflow-hidden shadow-2xl shadow-pink-950/20"
+          className="max-w-7xl mx-auto relative overflow-hidden rounded-sm bg-pink-950 px-8 py-20 md:px-16 md:py-28 text-center"
         >
-          <div className="absolute inset-0 bg-gradient-to-tr from-pink-900 to-pink-800 opacity-60" />
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8Y2lyY2xlIGN4PSIyIiBjeT0iMiIgcj0iMSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjEpIj48L2NpcmNsZT4KPC9zdmc+')] opacity-30" />
-
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(37,99,235,0.35),transparent_55%)]" />
           <div className="relative z-10">
-            <h2 className="text-5xl md:text-7xl font-serif italic text-white tracking-tighter mb-8">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif italic text-white tracking-tighter mb-6">
               Ready to innovate?
             </h2>
-            <p className="max-w-xl mx-auto text-slate-300 text-lg mb-12 font-light">
-              I'm currently available for full-time roles and high-impact freelance collaborations.
+            <p className="max-w-lg mx-auto text-slate-300 text-base md:text-lg mb-10 font-light">
+              Available for full-time roles and high-impact freelance collaborations.
             </p>
-            <Link to="/contact" className="inline-block bg-white text-pink-950 px-10 py-4 rounded-md font-bold uppercase tracking-widest hover:bg-pink-100 transition-colors shadow-lg shadow-black/10">
+            <Link to="/contact" className="inline-block bg-pink-600 hover:bg-pink-500 text-white px-10 py-4 rounded-md font-bold uppercase tracking-widest text-xs transition-colors">
               Start a Conversation
             </Link>
           </div>

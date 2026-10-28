@@ -62,11 +62,11 @@ export const Contact = () => {
 
   return (
     <div className="bg-off-white text-pink-950 min-h-screen">
-      {/* Hero — centered invite + arc */}
+      {/* Hero — invite + status */}
       <section className="hero-container hero-page relative overflow-hidden flex items-center">
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden>
-          <svg className="w-[min(90vw,520px)] h-[min(90vw,520px)] hero-arc-glow" viewBox="0 0 400 400" fill="none">
-            <circle cx="200" cy="200" r="160" stroke="rgba(96,165,250,0.15)" strokeWidth="1" />
+        <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 pointer-events-none opacity-80" aria-hidden>
+          <svg className="w-[min(70vw,480px)] h-[min(70vw,480px)] hero-arc-glow" viewBox="0 0 400 400" fill="none">
+            <circle cx="200" cy="200" r="160" stroke="rgba(96,165,250,0.12)" strokeWidth="1" />
             <path
               d="M60 200 A140 140 0 0 1 340 200"
               stroke="url(#contactArc)"
@@ -83,28 +83,38 @@ export const Contact = () => {
           </svg>
         </div>
 
-        <div className="max-w-7xl mx-auto w-full relative z-10 px-4 md:px-6 pt-28 pb-16">
+        <div className="max-w-7xl mx-auto w-full relative z-10 px-4 md:px-6 pt-28 pb-20 grid lg:grid-cols-12 gap-10 items-end">
           <motion.div
-            className="max-w-3xl mx-auto text-center"
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
+            className="lg:col-span-8"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-pink-500/30 bg-white/5 mb-8">
-              <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-pink-500/30 bg-white/5 mb-7">
+              <span className="w-2 h-2 rounded-sm bg-pink-500 animate-pulse" />
               <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-pink-light">
                 Open for projects
               </span>
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tighter leading-[0.92] mb-6 text-white">
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-serif tracking-tighter leading-[0.88] mb-6 text-white">
               <span className="italic font-light">Let's build</span>
               <br />
               <span className="not-italic text-pink-light">extraordinary.</span>
             </h1>
-            <p className="max-w-lg mx-auto text-slate-300 text-base md:text-lg font-light leading-relaxed">
+            <p className="max-w-lg text-slate-300 text-base md:text-lg font-light leading-relaxed">
               New projects, collaborations, or full-time roles — tell me what you're
               building and we'll take it from there.
             </p>
+          </motion.div>
+          <motion.div
+            className="lg:col-span-4 font-mono text-sm text-slate-400 space-y-3 lg:text-right"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <p className="text-[10px] tracking-[0.2em] uppercase text-pink-light">Response time</p>
+            <p className="text-white text-2xl font-serif italic">Within 24h</p>
+            <p className="text-xs pt-2 border-t border-white/10">devwithmercedes@gmail.com</p>
           </motion.div>
         </div>
       </section>

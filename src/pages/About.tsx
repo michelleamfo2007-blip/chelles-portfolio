@@ -22,12 +22,12 @@ export const About = () => {
 
   return (
     <div className="bg-off-white text-pink-950">
-      {/* Hero — editorial rings */}
+      {/* Hero — editorial split */}
       <section className="hero-container hero-page relative overflow-hidden flex items-center">
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden>
-          <div className="absolute w-[28rem] h-[28rem] rounded-full border border-pink-400/15 hero-ring-pulse" />
-          <div className="absolute w-[36rem] h-[36rem] rounded-full border border-pink-500/10 hero-ring-pulse" style={{ animationDelay: "-2s" }} />
-          <div className="absolute w-[44rem] h-[44rem] rounded-full border border-dashed border-slate-500/20" />
+        <div className="absolute inset-0 flex items-center justify-end pointer-events-none pr-[5%]" aria-hidden>
+          <div className="absolute right-[8%] w-[22rem] h-[22rem] md:w-[32rem] md:h-[32rem] rounded-full border border-pink-400/20 hero-ring-pulse" />
+          <div className="absolute right-[4%] w-[28rem] h-[28rem] md:w-[40rem] md:h-[40rem] rounded-full border border-pink-500/10 hero-ring-pulse" style={{ animationDelay: "-2s" }} />
+          <div className="absolute right-0 w-[34rem] h-[34rem] md:w-[48rem] md:h-[48rem] rounded-full border border-dashed border-slate-500/20" />
         </div>
         <div
           className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 hidden sm:block writing-mode-vertical font-mono text-[10px] tracking-[0.4em] uppercase text-slate-500"
@@ -36,9 +36,9 @@ export const About = () => {
           Accra · Ghana · Est. 2024
         </div>
 
-        <div className="max-w-7xl mx-auto w-full relative z-10 px-4 md:px-6 pt-28 pb-16">
+        <div className="max-w-7xl mx-auto w-full relative z-10 px-4 md:px-6 pt-28 pb-20">
           <motion.div
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-2xl"
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
@@ -46,12 +46,12 @@ export const About = () => {
             <span className="text-pink-light font-mono text-[11px] tracking-[0.25em] uppercase block mb-5">
               The Architect
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tighter leading-[0.92] mb-6 text-white">
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-serif tracking-tighter leading-[0.88] mb-6 text-white">
               <span className="italic font-light">Dev with</span>
               <br />
               <span className="not-italic text-pink-light">Mercedes.</span>
             </h1>
-            <p className="max-w-xl mx-auto text-slate-300 text-base md:text-lg font-light leading-relaxed">
+            <p className="max-w-lg text-slate-300 text-base md:text-lg font-light leading-relaxed border-l border-pink-500/40 pl-5">
               Michelle Nhyira Amfo — crafting seamless digital ecosystems with a
               relentless focus on performance, elegance, and people.
             </p>

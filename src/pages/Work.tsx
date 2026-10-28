@@ -24,14 +24,15 @@ export const Work = () => {
 
   return (
     <div className="bg-off-white text-pink-950">
-      {/* Hero — archive / index layout */}
+      {/* Hero — diagonal archive */}
       <section className="hero-container hero-page relative overflow-hidden flex items-center">
         <div className="absolute inset-0 hero-work-grid" aria-hidden />
+        <div className="absolute -right-24 top-1/4 w-[55%] h-[120%] rotate-12 bg-gradient-to-b from-pink-600/10 via-transparent to-transparent pointer-events-none" aria-hidden />
         <div className="absolute right-0 top-0 bottom-0 w-1/2 max-w-xl pointer-events-none" aria-hidden>
-          <div className="absolute inset-x-0 h-24 bg-gradient-to-b from-transparent via-pink-600/20 to-transparent hero-work-scan blur-sm" />
+          <div className="absolute inset-x-0 h-24 bg-gradient-to-b from-transparent via-pink-600/25 to-transparent hero-work-scan blur-sm" />
         </div>
 
-        <div className="max-w-7xl mx-auto w-full relative z-10 px-4 md:px-6 pt-28 pb-16 grid lg:grid-cols-12 gap-10 items-end">
+        <div className="max-w-7xl mx-auto w-full relative z-10 px-4 md:px-6 pt-28 pb-20 grid lg:grid-cols-12 gap-10 items-end">
           <motion.div
             className="lg:col-span-7"
             initial={{ opacity: 0, x: -24 }}
@@ -41,7 +42,7 @@ export const Work = () => {
             <span className="text-pink-light font-mono text-[11px] tracking-[0.25em] uppercase block mb-5">
               Case Studies · Archive
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tighter leading-[0.9] mb-6 text-white">
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-serif tracking-tighter leading-[0.88] mb-6 text-white">
               <span className="italic font-light">Selected</span>
               <br />
               <span className="not-italic text-pink-light">Projects.</span>
@@ -59,18 +60,18 @@ export const Work = () => {
             transition={{ duration: 0.8, delay: 0.15 }}
             aria-hidden
           >
-            <div className="text-7xl md:text-8xl font-bold text-white/10 leading-none tabular-nums">
+            <div className="text-8xl md:text-9xl font-bold text-white/[0.07] leading-none tabular-nums tracking-tighter">
               {String(projects.length).padStart(2, "0")}
             </div>
-            <div className="text-[11px] tracking-[0.2em] uppercase text-pink-light mt-2 mb-6">
+            <div className="text-[11px] tracking-[0.2em] uppercase text-pink-light mt-3 mb-6">
               Shipped works
             </div>
-            <ul className="space-y-2 text-left lg:text-right max-w-xs ml-auto">
+            <ul className="space-y-2.5 text-left lg:text-right max-w-xs ml-auto border-t border-white/10 pt-5">
               {projects.slice(0, 5).map((p, i) => (
                 <li
                   key={p.link}
                   className="text-xs text-slate-400 truncate"
-                  style={{ opacity: 1 - i * 0.15 }}
+                  style={{ opacity: 1 - i * 0.14 }}
                 >
                   <span className="text-pink-500 mr-2">{String(i + 1).padStart(2, "0")}</span>
                   {p.title}
@@ -82,9 +83,9 @@ export const Work = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="section py-20">
+      <section className="py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="flex flex-wrap gap-2 mb-10">
+          <div className="flex flex-wrap gap-2 mb-12">
             {filterTags.map((tag) => (
               <motion.button
                 key={tag}
@@ -99,8 +100,8 @@ export const Work = () => {
           </div>
 
           <AnimatePresence mode="popLayout">
-            <motion.div layout className="grid md:grid-cols-2 gap-8">
-              {filteredProjects.map((project) => (
+            <motion.div layout className="grid md:grid-cols-2 gap-5 md:gap-6">
+              {filteredProjects.map((project, idx) => (
                 <motion.div
                   key={project.link}
                   layout
@@ -109,7 +110,7 @@ export const Work = () => {
                   exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.25 }}
                 >
-                  <ProjectCard {...project} />
+                  <ProjectCard {...project} index={idx} />
                 </motion.div>
               ))}
             </motion.div>

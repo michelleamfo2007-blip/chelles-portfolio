@@ -35,9 +35,9 @@ export const Skills = () => {
     <div className="bg-off-white text-pink-950">
       {/* Hero — orbital toolkit */}
       <section className="hero-container hero-page relative overflow-hidden flex items-center">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_45%,rgba(37,99,235,0.2),transparent_45%)]" aria-hidden />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_40%,rgba(37,99,235,0.08)_100%)]" aria-hidden />
 
-        <div className="max-w-7xl mx-auto w-full relative z-10 px-4 md:px-6 pt-28 pb-16 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto w-full relative z-10 px-4 md:px-6 pt-28 pb-20 grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,28 +46,36 @@ export const Skills = () => {
             <span className="text-pink-light font-mono text-[11px] tracking-[0.25em] uppercase block mb-5">
               Capabilities
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tighter leading-[0.9] mb-6 text-white">
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-serif tracking-tighter leading-[0.88] mb-6 text-white">
               <span className="italic font-light">The</span>
               <br />
               <span className="not-italic text-pink-light">Toolkit.</span>
             </h1>
-            <p className="max-w-md text-slate-300 text-base md:text-lg font-light leading-relaxed">
+            <p className="max-w-md text-slate-300 text-base md:text-lg font-light leading-relaxed mb-8">
               A specialized stack focused on speed, scalability, and aesthetic excellence—
               tools chosen to ship products that last.
             </p>
+            <div className="flex flex-wrap gap-2">
+              {["Frontend", "Backend", "DevOps"].map((t) => (
+                <span key={t} className="px-3 py-1.5 border border-white/15 text-[10px] font-mono uppercase tracking-widest text-slate-300">
+                  {t}
+                </span>
+              ))}
+            </div>
           </motion.div>
 
           <motion.div
-            className="relative h-[280px] sm:h-[340px] flex items-center justify-center"
+            className="relative h-[300px] sm:h-[380px] flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.1 }}
             aria-hidden
           >
-            <div className="absolute w-48 h-48 sm:w-56 sm:h-56 rounded-full border border-pink-400/20" />
-            <div className="absolute w-64 h-64 sm:w-80 sm:h-80 rounded-full border border-dashed border-pink-500/25 hero-orbit" />
-            <div className="absolute w-80 h-80 sm:w-[22rem] sm:h-[22rem] rounded-full border border-pink-300/10 hero-orbit-rev" />
-            <div className="relative z-10 w-28 h-28 rounded-full bg-pink-950 border border-pink-500/40 flex items-center justify-center shadow-[0_0_40px_rgba(37,99,235,0.35)]">
+            <div className="absolute w-40 h-40 sm:w-52 sm:h-52 rounded-full border border-pink-400/25 bg-pink-600/5" />
+            <div className="absolute w-64 h-64 sm:w-80 sm:h-80 rounded-full border border-dashed border-pink-500/30 hero-orbit" />
+            <div className="absolute w-80 h-80 sm:w-[22rem] sm:h-[22rem] rounded-full border border-pink-300/15 hero-orbit-rev" />
+            <div className="absolute w-[26rem] h-[26rem] rounded-full border border-white/5 hidden sm:block" />
+            <div className="relative z-10 w-28 h-28 rounded-md bg-pink-950/90 border border-pink-500/40 flex items-center justify-center shadow-[0_0_50px_rgba(37,99,235,0.4)] backdrop-blur-sm">
               <span className="font-mono text-[10px] tracking-widest uppercase text-pink-light text-center leading-tight">
                 Stack
                 <br />
@@ -75,15 +83,15 @@ export const Skills = () => {
               </span>
             </div>
             {[
-              { label: "React", top: "8%", left: "42%" },
-              { label: "Node", top: "28%", left: "78%" },
-              { label: "TS", top: "68%", left: "72%" },
-              { label: "SQL", top: "78%", left: "28%" },
-              { label: "AWS", top: "32%", left: "6%" },
+              { label: "React", top: "6%", left: "42%" },
+              { label: "Node", top: "26%", left: "78%" },
+              { label: "TS", top: "66%", left: "74%" },
+              { label: "SQL", top: "78%", left: "26%" },
+              { label: "AWS", top: "30%", left: "4%" },
             ].map((chip) => (
               <span
                 key={chip.label}
-                className="absolute px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-[10px] font-mono uppercase tracking-wider text-slate-200 backdrop-blur-sm"
+                className="absolute px-3 py-1.5 rounded-md bg-slate-900/70 border border-pink-400/25 text-[10px] font-mono uppercase tracking-wider text-slate-100 backdrop-blur-md shadow-lg"
                 style={{ top: chip.top, left: chip.left }}
               >
                 {chip.label}
