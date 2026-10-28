@@ -168,14 +168,15 @@ export const Home = () => {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+          <div className="projects-grid">
             {featuredProjects.map((project, idx) => (
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                transition={{ duration: 0.45, delay: idx * 0.06 }}
                 key={project.link}
+                className="h-full"
               >
                 <ProjectCard {...project} index={idx} />
               </motion.div>

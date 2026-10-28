@@ -13,36 +13,38 @@ export const ProjectCard = ({ title, description, link, tags, index }: Props) =>
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      whileHover={{ y: -4 }}
-      transition={{ type: "spring", stiffness: 400, damping: 30 }}
-      className="project-card group relative flex flex-col justify-between min-h-[260px] md:min-h-[280px] p-6 md:p-7 overflow-hidden"
+      whileHover={{ y: -5 }}
+      transition={{ type: "spring", stiffness: 380, damping: 28 }}
+      className="project-card group relative flex h-full flex-col justify-between p-7 md:p-8 overflow-hidden"
     >
-      <div className="relative z-10 flex items-start justify-between gap-4 mb-6">
-        <div className="text-[10px] uppercase tracking-[0.18em] text-slate-400 font-mono">
+      <div className="project-card-glow" aria-hidden />
+
+      <div className="relative z-10 flex items-start justify-between gap-4 mb-8">
+        <div className="text-[10px] uppercase tracking-[0.2em] text-pink-600 font-mono font-semibold">
           {tags.slice(0, 3).join(" · ")}
         </div>
         {num && (
-          <span className="font-mono text-[10px] text-slate-300 tabular-nums">
+          <span className="font-mono text-xs text-pink-300 tabular-nums group-hover:text-pink-600 transition-colors">
             {num}
           </span>
         )}
       </div>
 
       <div className="relative z-10 flex-1">
-        <h3 className="text-xl md:text-2xl font-serif italic font-normal text-slate-800 mb-3 leading-snug tracking-tight group-hover:text-pink-600 transition-colors">
+        <h3 className="text-2xl md:text-3xl font-serif italic text-pink-950 mb-4 leading-[1.1] tracking-tight group-hover:text-pink-600 transition-colors">
           {title}
         </h3>
-        <p className="text-slate-500 text-sm leading-relaxed font-light max-w-md">
+        <p className="text-pink-700/90 text-sm md:text-[15px] leading-relaxed line-clamp-3">
           {description}
         </p>
       </div>
 
-      <div className="relative z-10 flex justify-between items-center mt-8 pt-4 border-t border-slate-100">
-        <span className="text-[11px] font-mono text-slate-400 tracking-tight truncate max-w-[70%] group-hover:text-pink-600 transition-colors">
+      <div className="relative z-10 flex justify-between items-center mt-10 pt-5 border-t border-pink-100/80">
+        <span className="text-[11px] font-mono text-pink-500 tracking-tight truncate max-w-[70%] group-hover:text-pink-600 transition-colors">
           {link}
         </span>
-        <span className="w-9 h-9 rounded-md border border-slate-200 text-slate-500 flex items-center justify-center group-hover:border-pink-600 group-hover:text-pink-600 group-hover:bg-pink-50 transition-all shrink-0">
-          <ArrowUpRight className="w-4 h-4" />
+        <span className="w-11 h-11 rounded-md bg-pink-950 text-white flex items-center justify-center group-hover:bg-pink-600 transition-colors shrink-0">
+          <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
         </span>
       </div>
     </motion.a>

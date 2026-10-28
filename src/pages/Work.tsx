@@ -99,21 +99,21 @@ export const Work = () => {
             ))}
           </div>
 
-          <AnimatePresence mode="popLayout">
-            <motion.div layout className="grid md:grid-cols-2 gap-5 md:gap-6">
+          <AnimatePresence mode="sync">
+            <div className="projects-grid">
               {filteredProjects.map((project, idx) => (
                 <motion.div
                   key={project.link}
-                  layout
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.25 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="h-full"
                 >
                   <ProjectCard {...project} index={idx} />
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
           </AnimatePresence>
 
           {filteredProjects.length === 0 && (
