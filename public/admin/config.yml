@@ -37,6 +37,11 @@ collections:
                 name: link
                 widget: string
                 hint: "Domain only, no https:// (e.g. shopora.space)"
+              - label: Custom preview image
+                name: image
+                widget: string
+                required: false
+                hint: "Optional. Leave blank to auto-show a live screenshot of the site hero."
               - label: Tags
                 name: tags
                 widget: list
